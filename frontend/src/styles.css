@@ -1,0 +1,11 @@
+body { font-family: system-ui, sans-serif; margin: 0; }
+.layout { display: grid; grid-template-rows: auto 1fr; height: 100vh; }
+nav { display: flex; gap: 12px; padding: 10px; border-bottom: 1px solid #ddd; align-items: center; }
+nav a { text-decoration: none; }
+.container { padding: 16px; }
+.card { border: 1px solid #e5e5e5; padding: 12px; border-radius: 8px; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; }
+td, th { border: 1px solid #eee; padding: 6px 8px; text-align: left; }
+input, select, textarea, button { padding: 8px; margin: 4px 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+.alert { background: #ffe8e8; border: 1px solid #ffcccc; padding: 8px; }

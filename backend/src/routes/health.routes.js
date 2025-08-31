@@ -1,0 +1,22 @@
+import { Router } from 'express';
+import multer from 'multer';
+import { protect } from '../middleware/auth.js';
+import { authorize } from '../middleware/roles.js';
+import * as ctrl from '../controllers/health.controller.js';
+
+const upload = multer({ dest: 'src/uploads/' });
+const router = Router();
+router.use(protect, authorize('HEALTH_OFFICER'));
+router.post('/records/:crewId', upload.array('files', 6), ctrl.upsertRecord);
+router.get('/records/:crewId', ctrl.getRecord);
+router.post('/exam/:crewId', upload.array('attachments', 6), ctrl.addExam);
+router.get('/exam/:crewId', ctrl.getExams);
+router.post('/chronic/:crewId', ctrl.addChronic);
+router.get('/chronic/:crewId', ctrl.getChronic);
+router.post('/reminder/:crewId', ctrl.addReminder);
+router.get('/reminder/:crewId', ctrl.getReminders);
+router.post('/mental/:crewId', upload.array('attachments', 6), ctrl.addMental);
+router.get('/mental/:crewId', ctrl.getMental);
+router.post('/vaccination/:crewId', ctrl.addVaccination);
+router.get('/vaccination/:crewId', ctrl.getVaccinations);
+export default router;

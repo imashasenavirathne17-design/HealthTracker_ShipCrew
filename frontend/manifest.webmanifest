@@ -1,0 +1,9 @@
+{
+  "name": "Ship Health Tracker",
+  "short_name": "HealthTracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Health & Emergency tracking for ship crews",
+  "icons": []
+}

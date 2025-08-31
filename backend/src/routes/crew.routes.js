@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { protect } from '../middleware/auth.js';
+import { authorize } from '../middleware/roles.js';
+import { listCrew, createCrew, updateCrew } from '../controllers/crew.controller.js';
+const router = Router();
+router.use(protect);
+router.get('/', authorize('HEALTH_OFFICER','EMERGENCY_OFFICER'), listCrew);
+router.post('/', authorize('HEALTH_OFFICER'), createCrew);
+router.put('/:id', authorize('HEALTH_OFFICER'), updateCrew);
+export default router;
