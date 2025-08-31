@@ -1,4 +1,4 @@
-# Ship Health Tracker (MERN) — Health Officer + Emergency Officer
+# Ship Health Tracker (MERN)
 
 ## Quick Start
 1) Backend
